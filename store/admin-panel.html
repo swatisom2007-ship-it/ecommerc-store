@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styling for the admin panel layout */
+        body {
+            display: flex;
+            background-color: #f0f2f5; 
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50; /* Dark blue sidebar */
+            color: white;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border-left: 5px solid transparent;
+        }
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #34495e;
+            border-left: 5px solid #007bff;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+        }
+        .dashboard-header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        .stat-card p {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="#" class="active">📊 Dashboard</a></li>
+            <li><a href="#">📦 Products</a></li>
+            <li><a href="#">🛒 Orders</a></li>
+            <li><a href="#">👥 Customers</a></li>
+            <li><a href="#">⚙️ Settings</a></li>
+            <li><a href="admin-login.html" onclick="alert('Logging out...')">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Welcome Back, Admin!</h1>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Sales</h3>
+                <p>$12,450</p>
+            </div>
+            <div class="stat-card">
+                <h3>New Orders</h3>
+                <p>15</p>
+            </div>
+            <div class="stat-card">
+                <h3>Products In Stock</h3>
+                <p>450</p>
+            </div>
+            <div class="stat-card">
+                <h3>New Customers</h3>
+                <p>32</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">Recent Activity</h2>
+        <div class="stat-card" style="margin-top: 20px;">
+            <p>Recent orders and product updates would appear here.</p>
+        </div>
+    </div>
+
+</body>
+</html>

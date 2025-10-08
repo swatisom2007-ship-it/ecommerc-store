@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Styling is the same as the register page for consistency */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.8rem;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff; /* Blue button for Login */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Log in to MyStore</h2>
+
+        <form onsubmit="handleLogin(event)"> 
+            <div class="input-group">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" placeholder="Your email" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Your password" required>
+            </div>
+            
+            <button type="submit">
+                Login
+            </button>
+        </form>
+
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            Don't have an account? <a href="register.html" style="color: #28a745; text-decoration: none;">Sign Up now</a>
+        </p>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            // This prevents the form from submitting and refreshing the page
+            event.preventDefault(); 
+            
+            // !!! NOTE: This is NOT a secure password check. It just simulates success.
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            // Simple check: as long as the fields are filled, we'll pretend the login is successful
+            if (email && password) {
+                alert("Login Successful! Redirecting to the main store...");
+                
+                // *** YEH HAI VO REDIRECT KA CODE ***
+                window.location.href = "index.html"; 
+            } else {
+                alert("Please enter both email and password.");
+            }
+        }
+    </script>
+
+</body>
+</html>
